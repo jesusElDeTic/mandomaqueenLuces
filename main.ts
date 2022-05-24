@@ -1,16 +1,18 @@
 radio.onReceivedNumber(function (receivedNumber) {
     if (receivedNumber == 1) {
         strip.showColor(neopixel.colors(NeoPixelColors.Red))
-        maqueen.motorRun(maqueen.Motors.M2, maqueen.Dir.CCW, 64)
-        maqueen.motorRun(maqueen.Motors.M1, maqueen.Dir.CW, 128)
+        maqueen.motorRun(maqueen.Motors.M2, maqueen.Dir.CW, 21)
+        maqueen.motorRun(maqueen.Motors.M1, maqueen.Dir.CCW, 21)
     } else if (receivedNumber == 2) {
         strip.showColor(neopixel.colors(NeoPixelColors.Green))
-        maqueen.motorRun(maqueen.Motors.M2, maqueen.Dir.CW, 128)
-        maqueen.motorRun(maqueen.Motors.M1, maqueen.Dir.CCW, 64)
+        maqueen.motorRun(maqueen.Motors.M1, maqueen.Dir.CW, 21)
+        maqueen.motorRun(maqueen.Motors.M2, maqueen.Dir.CCW, 21)
     } else if (receivedNumber == 3) {
         strip.showColor(neopixel.colors(NeoPixelColors.Purple))
+        maqueen.motorRun(maqueen.Motors.All, maqueen.Dir.CW, 100)
     } else {
         strip.showColor(neopixel.colors(NeoPixelColors.Blue))
+        maqueen.motorStop(maqueen.Motors.All)
     }
 })
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
