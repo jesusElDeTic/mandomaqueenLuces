@@ -13,18 +13,22 @@ radio.onReceivedNumber(function (receivedNumber) {
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     radio.sendNumber(4)
     strip.showColor(neopixel.colors(NeoPixelColors.Blue))
+    basic.showString("L")
 })
 input.onButtonPressed(Button.A, function () {
     radio.sendNumber(1)
     strip.showColor(neopixel.colors(NeoPixelColors.Red))
+    basic.showString("A")
 })
 input.onButtonPressed(Button.AB, function () {
     radio.sendNumber(3)
     strip.showColor(neopixel.colors(NeoPixelColors.Purple))
+    basic.showString("+")
 })
 input.onButtonPressed(Button.B, function () {
     radio.sendNumber(2)
     strip.showColor(neopixel.colors(NeoPixelColors.Green))
+    basic.showString("B")
 })
 let strip: neopixel.Strip = null
 radio.setGroup(10)
