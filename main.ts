@@ -1,9 +1,12 @@
 radio.onReceivedNumber(function (receivedNumber) {
-    basic.showNumber(receivedNumber)
     if (receivedNumber == 1) {
         strip.showColor(neopixel.colors(NeoPixelColors.Red))
+        maqueen.motorRun(maqueen.Motors.M2, maqueen.Dir.CCW, 64)
+        maqueen.motorRun(maqueen.Motors.M1, maqueen.Dir.CW, 128)
     } else if (receivedNumber == 2) {
         strip.showColor(neopixel.colors(NeoPixelColors.Green))
+        maqueen.motorRun(maqueen.Motors.M2, maqueen.Dir.CW, 128)
+        maqueen.motorRun(maqueen.Motors.M1, maqueen.Dir.CCW, 64)
     } else if (receivedNumber == 3) {
         strip.showColor(neopixel.colors(NeoPixelColors.Purple))
     } else {
@@ -33,6 +36,4 @@ input.onButtonPressed(Button.B, function () {
 let strip: neopixel.Strip = null
 radio.setGroup(10)
 strip = neopixel.create(DigitalPin.P15, 4, NeoPixelMode.RGB)
-basic.forever(function () {
-	
-})
+maqueen.motorRun(maqueen.Motors.All, maqueen.Dir.CW, 128)
